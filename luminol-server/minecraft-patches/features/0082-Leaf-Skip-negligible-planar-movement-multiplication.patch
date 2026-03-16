@@ -8,10 +8,10 @@ A part of Leaf(https://github.com/Winds-Studio/Leaf/blob/dev/1.21.9/leaf-server/
 Original license: https://github.com/Winds-Studio/Leaf/blob/dev/1.21.9/LICENSE.md
 
 diff --git a/net/minecraft/world/entity/Entity.java b/net/minecraft/world/entity/Entity.java
-index 575f821bc1ae00c6a60b52cecf51131d9f1a5501..e62a8d23736de03f18c615c7622414aac3dc8aef 100644
+index 8cc8cf26d4e805b71d09403cf80719cc685d3e3b..040c0f8d26554ba583ecf370e2df3690d8f48dd6 100644
 --- a/net/minecraft/world/entity/Entity.java
 +++ b/net/minecraft/world/entity/Entity.java
-@@ -1299,8 +1299,18 @@ public abstract class Entity implements SyncedDataHolder, DebugValueSource, Name
+@@ -1282,8 +1282,18 @@ public abstract class Entity implements SyncedDataHolder, DebugValueSource, Name
                      }
                  }
  

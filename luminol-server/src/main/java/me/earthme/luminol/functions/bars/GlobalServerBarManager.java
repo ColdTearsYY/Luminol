@@ -2,19 +2,14 @@ package me.earthme.luminol.functions.bars;
 
 import me.earthme.luminol.enums.EnumBarType;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GlobalServerBarManager {
-    private final static Map<EnumBarType, AbstractGlobalServerBar> bars = new HashMap<>();
+    private final static Map<EnumBarType, AbstractGlobalServerBar> bars = new ConcurrentHashMap<>();
 
     public static AbstractGlobalServerBar get(EnumBarType type) {
-        AbstractGlobalServerBar bar = bars.get(type);
-        if (bar == null) {
-            bar = type.newInstance();
-            bars.put(type, bar);
-        }
-        return bar;
+        return bars.computeIfAbsent(type, (unused) -> type.newInstance());
     }
 
     public static void cancelAll() {
